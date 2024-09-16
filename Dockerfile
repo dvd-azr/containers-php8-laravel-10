@@ -23,7 +23,7 @@ RUN composer install
 RUN chown -R www-data:www-data /var/www/html
 
 # Copy over the .env file and generate the app key
-COPY .env .env
+COPY .env.example .env
 RUN php artisan key:generate
 
 # Expose port 80
